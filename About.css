@@ -1,0 +1,1003 @@
+/* Theme for browser webpages */
+@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+  :root {
+    --back-color1: var(--dark-color1);
+    --back-color2: var(--dark-color2);
+    --back-color3: var(--dark-color3);
+    --back-color4: var(--dark-color4);
+
+    --text-color1: var(--light-color5);
+    --text-color2: var(--light-color6);
+    --text-color3: var(--light-color7);
+  }
+}
+
+
+
+@-moz-document url-prefix(chrome://),
+url(https://www.mozilla.org/credits/),
+url-prefix(https://raw.githubusercontent.com),
+url-prefix(https://www.keybr.com),
+url-prefix(view-source:) {
+  :root {
+    --in-content-page-background: var(--back-color1) !important;
+    --in-content-page-color: var(--text-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+  }
+
+  html, body {
+    background-color: var(--in-content-page-background) !important;
+    color: var(--in-content-page-color) !important;
+  }
+}
+
+@-moz-document url-prefix(about:) {
+  :root {
+    --in-content-page-background: var(--back-color1) !important;
+    --in-content-page-color: var(--text-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+  }
+}
+
+@-moz-document url-prefix("about:blank") {
+  body {
+    background-color: var(--back-color1) !important;
+  }
+}
+
+
+/* ============= ADDON PAGE ============= */
+
+@-moz-document url-prefix("about:addons") {
+  #header-inner {
+    margin: 2px 0px -40px 4px !important;
+  }
+
+  #heading {
+    margin: 1px 0px 1px -4px !important;
+  }
+
+  #main {
+    margin-top: 5px;
+  }
+
+  .addon-name {
+    font-weight: 400 !important;
+  }
+
+  .addon.card {
+    margin-bottom: 5px !important;
+    /* min-width: 1000px !important;*/
+  }
+
+  addon-card:not([expanded]) > .addon.card:hover {
+    box-shadow: var(--back-color3) !important;
+  }
+
+  .card {
+    background: var(--back-color2) !important;
+    display: block !important;
+  }
+
+  .card-contents {
+    flex-direction: row !important;
+    display: block !important;
+  }
+
+  .list-section-heading {
+    margin-bottom: 9px !important;
+  }
+
+  .more-options-button {
+    top: 8px;
+  }
+
+  .prefs-button, .addon-description, .addon-badge, .help-button, #search-label, #category-discover, #heading-name, .list-section-heading, .recommended-extensions-section {
+    display:none;
+  }
+
+  .sidebar-footer-button {
+    margin-bottom: 36px;
+  }
+}
+
+
+  html|button.semi-transparent:not(.primary):enabled:hover {
+    background-color: red !important;
+  }
+
+  html|button.semi-transparent:not(.primary):enabled:hover:active {
+    background-color: red !important;
+  }
+}
+
+
+/* ============= Error Pages ============= */
+
+@-moz-document url-prefix("about:neterror") {
+  #errorPageContainer {
+    background: url("./icons/sonic.gif") no-repeat left center !important;
+    background-size: 38% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: calc(100vw / 2) !important;
+    max-height: calc(100vh / 2) !important;
+  }
+
+  #text-container {
+    padding-inline-start: 38% !important;
+  }
+}
+
+@-moz-document url-prefix("about:restartrequired") {
+  #errorPageContainer {
+    background: url("./icons/fox-transparent.gif") no-repeat left center !important;
+    background-size: 38% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: calc(100vw / 2) !important;
+    max-height: calc(100vh / 2) !important;
+  }
+
+  #text-container {
+    padding-inline-start: 38% !important;
+  }
+}
+
+
+
+
+
+
+/*================== READER VIEW ==================*/
+
+@-moz-document url-prefix("about:reader") {
+  html {
+    background: var(--back-color1);
+  }
+
+  toolbar > reader-toolbar {
+    border-radius: 3px !important;
+  }
+
+  /*Dark*/
+  body.loaded.dark {
+    --toolbar-bgcolor: var(--back-color2) !important;
+    --toolbar-border: var(--back-color1) !important;
+    --toolbar-hover: var(--back-color3) !important;
+    --popup-bgcolor: var(--back-color2) !important;
+    --popup-border: var(--back-color3) !important;
+    --font-color: var(--text-color3) !important;
+    --icon-fill: var(--text-color3) !important;
+    background: var(--back-color1) !important;
+    --blue-40:var(--text-color1) !important;
+    --blue-40-a30:rgba(144, 89, 255, 0.3) !important;
+    --active-color:var(--text-color1) !important;
+  }
+
+  /*Light*/
+  body.loaded.light {
+    --toolbar-bgcolor: var(--light-color2) !important;
+    --toolbar-border: var(--light-color1) !important;
+    --toolbar-hover: var(--light-color3) !important;
+    --popup-bgcolor: var(--light-color2) !important;
+    --popup-border: var(--light-color3) !important;
+    --font-color: var(--dark-color7) !important;
+    --icon-fill: var(--dark-color7) !important;
+    background: var(--light-color1) !important;
+    --blue-40:var(--dark-color5) !important;
+    --blue-40-a30:rgba(51, 46, 86, 0.3) !important;
+    --active-color:var(--dark-color5) !important;
+  }
+
+}
+
+
+
+
+
+
+/* =============== Scrollbar =============== */
+
+:root {
+  --addon-icon-size: 26px !important; --card-padding: 14px !important;
+  scrollbar-color: rgb(29, 33, 38) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+}
+
+
+
+
+
+
+/* =============== Customize Developer Tools =============== */
+
+@-moz-document url("chrome://devtools/content/styleeditor/index.xhtml") {
+  .splitview-nav .unsaved {
+    background: linear-gradient(to right, #f0a 4px, #f0a4 4px, transparent) !important;
+  }
+
+  .splitview-nav .unsaved.splitview-active {
+    background: linear-gradient(to right, #f0a 4px, #f0a4 4px) !important;
+  }
+
+  /* Auto-Highlight common user style filenames */
+  .splitview-nav label[value="userChrome.css"],
+  .splitview-nav label[value="userContent.css"],
+  .splitview-nav label[value$=".uc.css"] {
+    color: #f0a !important;
+  }
+}
+
+
+
+
+
+
+/* =============== About Page =============== */
+
+.button-reset:hover,
+.button-delete:hover,
+.button-toggle:hover,
+.button-edit:hover {
+  fill: var(--color) !important;
+  background-color: transparent !important;
+}
+
+.button-reset,
+.button-delete,
+.button-toggle,
+.button-edit {
+  background-color: transparent !important;
+}
+
+#prefs > tr.odd {
+  background-color: var(--in-content-page-background) !important;
+}
+
+
+
+
+
+/* =============== Sync-Log Page =============== */
+
+@-moz-document url("about:sync-log") { 
+
+:root {
+  background-color: var(--dark-color1) !important; 
+  }
+
+body {
+  border: 2px solid var(--secondcolor) !important;
+  background-color: var(--dark-color1) !important;
+ }
+a {
+  color: var(--color) !important;
+}
+
+}
+
+
+
+
+
+
+/* =============== Plugins Page =============== */
+
+@-moz-document url("about:plugins") { 
+
+body {
+  background-color: var(--dark-color1) !important;
+ }
+.notice {
+  background-color: var(--dark-color1) !important;
+  color: white !important;
+  border: 2px solid var(--secondcolor) !important;
+}
+.notice > a {
+	color: var(--color) !important;
+}
+}
+
+
+
+
+
+/* =============== Memory Page =============== */
+
+@-moz-document url("about:memory") { 
+
+html {
+  background: var(--dark-color1) !important;
+  color: -moz-DialogText;
+  font: message-box;
+}
+
+div.opsRow {
+  padding: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  border: 2px solid var(--secondcolor) !important;
+  border-radius: 10px;
+  background: var(--dark-color1) !important;
+  color: FieldText;
+  display: inline-block;
+}
+
+
+#measureButton {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+#measureButton:hover {
+	color: var(--color) !important;
+}
+
+#saveLogsConcise {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+#saveLogsConcise:hover {
+	color: var(--color) !important;
+}
+
+
+#saveLogsVerbose {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+#saveLogsVerbose:hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(1) > button:nth-child(3) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(1) > button:nth-child(3):hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(1) > button:nth-child(4) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(1) > button:nth-child(4):hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(3) > button:nth-child(2) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(3) > button:nth-child(2):hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(2) > button:nth-child(2) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(2) > button:nth-child(2):hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(3) > button:nth-child(3) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(3) > button:nth-child(3):hover {
+	color: var(--color) !important;
+}
+
+
+div.opsRow:nth-child(3) > button:nth-child(4) {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+div.opsRow:nth-child(3) > button:nth-child(4):hover {
+	color: var(--color) !important;
+}
+
+
+#verbose { 
+
+  appearance: none !important;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: -2px;
+  padding: 5px 5px;
+  background-color: var(--dark-color1) !important;
+  border: 2px solid var(--secondcolor) !important;
+  border-radius: 3px;
+
+}
+
+#verbose:hover { 
+
+  appearance: none !important;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: -2px;
+  padding: 5px 5px;
+  background-color: var(--secondcolor) !important;
+  border: 2px solid var(--secondcolor) !important;
+  border-radius: 3px;
+
+}
+
+#verbose:checked { 
+
+    border-color: var(--checkbox-checked-border-color, transparent);
+  background-color: var(--checkbox-checked-bgcolor, AccentColor);
+  background-image: url("chrome://global/skin/icons/check.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  color: var(--checkbox-checked-color, AccentColorText);
+  color-adjust: exact;
+}
+}
+
+
+div.opsRow:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(1) { 
+
+  appearance: none !important;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: -2px;
+  padding: 5px 5px;
+  background-color: var(--dark-color1) !important;
+  border: 2px solid var(--secondcolor) !important;
+  border-radius: 3px;
+
+}
+
+div.opsRow:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(1):hover { 
+
+  appearance: none !important;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: -2px;
+  padding: 5px 5px;
+  background-color: var(--secondcolor) !important;
+  border: 2px solid var(--secondcolor) !important;
+  border-radius: 3px;
+
+}
+
+div.opsRow:nth-child(2) > div:nth-child(1) > label:nth-child(1) > input:nth-child(1):checked { 
+
+    border-color: var(--checkbox-checked-border-color, transparent);
+  background-color: var(--checkbox-checked-bgcolor, AccentColor);
+  background-image: url("chrome://global/skin/icons/check.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  color: var(--checkbox-checked-color, AccentColorText);
+  color-adjust: exact;
+}
+
+
+}
+
+
+
+
+
+/* =============== Certificate Page =============== */
+
+@-moz-document url("about:certificate") { 
+
+.export {
+	border-radius: 6px !important;
+	appearance: none !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+.export:hover {
+  color: var(--color) !important
+}
+
+}
+
+
+/* =============== Debugging Page =============== */
+
+@-moz-document url("about:debugging") { 
+
+
+.app {
+  background-color: var(--dark-color1) !important;
+}
+
+.card {
+  background-color: var(--dark-color1) !important;
+}
+.sidebar-item__link {
+ color: white !important;
+}
+.sidebar-item__link:hover, .sidebar-item__link:hover {
+  color: var(--color) !important;
+  background-color: var(--dark-color1) !important;
+}
+
+.sidebar-item--selectable:hover {
+  background-color: var(--dark-color1) !important;
+}
+
+a {
+  color: var(--color) !important;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color) !important;
+  text-decoration: underline;
+}
+
+.default-input {
+  border-radius: 0px !important;
+  background-color: var(--dark-color1) !important;
+}
+
+#about-debugging-network-locations-host-input {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: 2px solid var(--secondcolor) !important;
+      border-radius: 4px !important;
+	width: 100% !important;
+}
+
+#about-debugging-network-locations-host-input:focus {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid transparent !important;
+	outline: solid var(--color) !important;
+}
+
+
+}
+
+
+
+
+
+/* =============== Logins Page =============== 
+
+@-moz-document url("about:logins") { 
+
+.meta {
+  border-bottom: 2px solid var(--secondcolor) !important;
+  background-color: var(--dark-color1) !important;
+}
+
+ol {
+  background-color: var(--dark-color1) !important;
+}
+
+.create-login-button-container {
+  border-top: 2px solid var(--secondcolor) !important;
+  background-color: var(--dark-color1) !important;
+}
+
+.login-list-item.selected {
+  border-inline-start-color: var(--color) !important;
+}
+
+.login-list-item.selected .title {
+  font-weight: 600;
+  color: var(--color) !important;
+}
+
+#login-sort:hover:not([disabled]) {
+  background-color: var(--dark-color1) !important;
+  color: var(--color) !important;
+}
+.detail-grid > .detail-row > .copy-button {
+  grid-column: 2;
+  margin-inline-start: 0;
+  justify-self: start;
+  align-self: end;
+  background-color: var(--dark-color1) !important;
+  border: 2px solid var(--secondcolor) !important;
+}
+
+.detail-grid > .detail-row > .copy-button:hover {
+  border: 2px solid var(--color) !important;
+  color: var(--color) !important;
+}
+
+.fxaccounts-avatar-button:hover > .fxaccount-email {
+  color: var(--color) !important;
+}
+
+.create-login-button {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+.create-login-button:hover {
+	color: var(--color) !important;
+      border-color: var(--color) !important;
+}
+
+
+.edit-button {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+}
+
+.edit-button:hover {
+	color: var(--color) !important;
+}
+
+.delete-button {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+}
+
+.delete-button:hover {
+	color: var(--color) !important;
+}
+
+.menu-button {
+	display: none !important;
+}
+
+.origin-input {
+	color: var(--color) !important;
+}
+
+.save-changes-button {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+.save-changes-button:hover {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--color) !important;
+	color: var(--color) !important;
+}
+
+.cancel-button {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--secondcolor) !important;
+}
+
+.cancel-button:hover {
+	appearance: none !important;
+	border-radius: 6px !important;
+	background-color: transparent !important;
+	border: 2px solid var(--color) !important;
+	color: var(--color) !important;
+}
+
+.reveal-password-checkbox:hover
+{
+	color: var(--color) !important;
+}
+
+.arrow-box {
+  position: relative;
+  padding: 12px;
+  background-color: transparent !important;
+  border: 1px solid var(--secondcolor) !important;
+  border-radius: 4px;
+}
+
+.column > form:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2) {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: 2px solid var(--secondcolor) !important;
+      border-radius: 4px !important;
+	
+}
+
+.detail-grid > div:nth-child(1) > label:nth-child(1) > input:nth-child(2) {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: 2px solid var(--secondcolor) !important;
+      border-radius: 4px !important;
+	width: 100% !important;
+}
+
+.reveal-password-wrapper > input:nth-child(1) {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: 2px solid var(--secondcolor) !important;
+      border-radius: 4px !important;
+	width: 100% !important;
+}
+
+.filter {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid var(--secondcolor) !important;
+      border-radius: 4px !important;
+}
+
+.column > form:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2):focus {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid transparent !important;
+	outline: solid var(--color) !important;
+}
+
+.detail-grid > div:nth-child(1) > label:nth-child(1) > input:nth-child(2):focus {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid transparent !important;
+	outline: solid var(--color) !important;
+}
+
+.reveal-password-wrapper > input:nth-child(1):focus {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid transparent !important;
+	outline: solid var(--color) !important;
+}
+
+.filter:focus {
+	appearance: none !important;
+	background-color: var(--dark-color1) !important;
+	border: solid transparent !important;
+	outline: solid var(--color) !important;
+}
+
+
+}
+
+
+
+
+
+
+/* =============== Preferences Page =============== */
+
+@-moz-document url("about:preferences") { 
+
+richlistitem.download:nth-child(3) > hbox:nth-child(1)
+	outline: solid red !important;
+
+/*Linea separadora en "configuración"*/
+
+
+.subcategory:not([hidden]) ~ .subcategory {
+    border-image: var(--panel-separator-zap-gradient1) 1 !important; }
+.card[active="true"]{
+    background-color: color-mix(in srgb, var(--in-content-box-background)96%, white) !important;
+    outline: 1px solid var(--in-content-box-border-color) !important;
+    outline-width: 2px !important; }
+.card[active="false"]{
+    outline: 1px solid color-mix(in srgb, var(--in-content-box-border-color)30%, transparent) !important; }
+.addon.card:hover{
+    outline-color: var(--color) !important;
+    border-radius: 4px !important;}
+addon-card[expanded] .addon.card {
+    margin-top: 4px !important;
+    }
+
+#categories, #sidebar ,.main-heading, .main-search , .navigation, .sticky-container  {
+    background: var(--in-content-box-background) !important;}
+.navigation, #sidebar{ 
+    border-right: 1px solid var(--in-content-box-border-color) !important;
+    }
+.sticky-container{
+    border-bottom: 1px solid var(--in-content-box-border-color) !important;
+    box-shadow: 3px 3px 7px #00000050 !important;}
+#main{
+    margin-inline-start: 7% !important;}
+.main-search {
+    padding-inline-end: 28px;
+    max-width: 100% !important;
+    padding: 20px 20px !important;
+    }
+.main-search .search-label {
+    display: none !important;}
+.main-heading {
+    margin-top: -52px !important;
+    margin-bottom: 4px !important;
+    min-width: 50% !important; }
+.main-heading .spacer {
+    max-width: 20px !important;}
+#policies-container, #searchInput {
+    min-height: 32px; border-radius: 16px !important;
+    margin: 20px 70px 20px !important; }
+#policies-container:hover, #searchInput:hover {
+    border-color: var(--color) !important;}
+.content-blocking-category.selected {
+    background-color: var(--in-content-box-background) !important;}
+.content-blocking-category.selected {
+    border-color: var(--color) !important; }
+search-addons > search-textbox {
+    border-radius: 16px !important;}
+search-addons > search-textbox:hover {
+    border-color: var(--color) !important;}
+}
+
+
+ #mainPrefPane{
+     padding-top: 20px !important; width: 100% !important; }
+.pane-container {
+    margin-inline-start: 50px !important; margin-inline-end: 50px !important;}
+.sticky-container {
+    background: var(--in-content-box-background) !important;
+    background: linear-gradient(to right, var(--in-content-box-background) 94%, var(--in-content-page-background)) !important;
+    width: 125% !important;
+    margin-left: -98px !important;
+    border-bottom: 1px solid transparent !important;
+    border-image: var(--gradiente-casual) 1 !important;
+    box-shadow: -7px 3px 7px #00000050 !important;
+    }
+
+        .dialogBox {--in-content-page-background: #101019 !important;}}
+
+}
+
+
+
+
+
+
+/* =============== Downloads Page =============== */
+
+@-moz-document url("about:downloads") { 
+
+
+}
+
+
+
+
+
+
+/* ========== Hide text in built-in print screen =============== */
+
+@-moz-document url-prefix("moz-extension://08b76965-6643-443a-9219-b05054b0b4c7/blank.html") {
+  .preview-instructions, .face-container, .cancel-shot {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+/* =============== Login page changes =============== */
+
+@-moz-document url-prefix("about:logins") {
+  .login-list-item {
+    background-color: var(--back-color1) !important;
+  }
+}
+
+
+
+
+
+
+@-moz-document regexp(".*\\.(p|P)(d|D)(f|F).*") {
+  :root {
+    --toolbar-bg-color: var(--back-color1) !important;
+    --body-bg-color: var(--back-color1) !important;
+    --sidebar-bg-color: var(--back-color1) !important;
+    --button-hover-color: var(--back-color1) !important;
+    --field-bg-color: var(--back-color1) !important;
+  }
+
+  @media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+    #viewer {
+      filter: invert(0);
+    }
+  }
+
+  .dropdownToolbarButton > select {
+    background-color: var(--back-color2) !important;
+  }
+
+  .dropdownToolbarButton > select:hover {
+    background-color: var(--back-color1) !important;
+  }
+}
+
+
+
+
+
+
+/* =============== Site Specific Customisations =============== */
+
+@-moz-document url("https://www.qwiklabs.com/public_profiles/8ce32532-ca12-4a89-aed0-99c9316cae73") {
+  .container img {
+    height: 180px !important;
+    width: 180px !important;
+  }
+
+  .container .title {
+    width: 250px;
+    text-align: center;
+  }
+}
+
+@-moz-document url-prefix("https://www.cloudskillsboost.google") {
+  :root {
+    --base-surface-color: #11131C !important;
+    --base-text-on-surface-color: #d3cfc9 !important;
+  }
+}
+
+@-moz-document url-prefix("https://jsfiddle.net/") {
+  #sidebar {
+    width: 125px;
+  }
+
+  #content {
+    margin-left: -84px !important;
+  }
+
+  #sidebar * {
+    overflow: hidden;
+  }
+
+  #s-bottom {
+    display: none !important;
+  }
+}
+
+@-moz-document url-prefix("https://www.notion.so") {
+  .notion-selectable.notion-text-block {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .notion-selectable.notion-text-block .notranslate {
+    padding: 0px 2px !important;
+  }
+}
+
